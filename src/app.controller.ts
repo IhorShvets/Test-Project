@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { AxiosResponse } from 'axios';
 import { AgePredictionResponseModel } from './models/AgePrediction.response.model';
 
-@Controller()
+@Controller('name-predict')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get(':name')
-  getHello(
+  namePredict(
     @Param() params,
   ): Observable<AxiosResponse<AgePredictionResponseModel[]>> {
     return this.appService.predictName(params.name);
