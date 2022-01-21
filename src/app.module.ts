@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HttpModule } from '@nestjs/axios';
+import { MakeActivityModule } from './intagrations/make-activity/make-activity.module';
 
 @Module({
   imports: [
@@ -9,6 +10,7 @@ import { HttpModule } from '@nestjs/axios';
       timeout: 5000,
       maxRedirects: 5,
     }),
+    MakeActivityModule,
   ],
   controllers: [AppController],
   providers: [AppService],
