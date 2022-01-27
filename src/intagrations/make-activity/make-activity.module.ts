@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { MakeActivityController } from './make-activity.controller';
 import { MakeActivityService } from './make-activity.service';
 import { HttpModule } from '@nestjs/axios';
+import { MakeActivityErrorMapper } from './make-activity-error-mapper';
 
 @Module({
   imports: [
@@ -11,7 +12,7 @@ import { HttpModule } from '@nestjs/axios';
     }),
   ],
   controllers: [MakeActivityController],
-  providers: [MakeActivityService],
+  providers: [MakeActivityService, MakeActivityErrorMapper],
   exports: [MakeActivityService],
 })
 export class MakeActivityModule {}
